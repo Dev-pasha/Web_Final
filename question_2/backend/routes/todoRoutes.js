@@ -38,18 +38,18 @@ router.delete("/todo:id", async (req, res) => {
     });
 });
 
-// // // update todo
-// router.put("/todo/:id", async (req, res) => {
-//     const todo = await Todo.findById(req.params.id);
-//     todo.title = req.body.title;
-//     todo.description = req.body.description;
-//     await todo.save();
-//     res.status(200).json({
-//         success: true,
-//         message: "Todo updated",
+// // update todo
+router.put("/todo/:id", async (req, res) => {
+    const todo = await Todo.findById(req.params.id);
+    todo.title = req.body.title;
+    todo.description = req.body.description;
+    await todo.save();
+    res.status(200).json({
+        success: true,
+        message: "Todo updated",
 
-//     });
-// })
+    });
+})
 
 
 
